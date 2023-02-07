@@ -1,9 +1,15 @@
-import Upload from '@/components/files/Upload'
-import ImagesList from '@/components/files/ImagesList'
 
+import Main from '@/components/Main'
 import Head from 'next/head'
+import { useState } from 'react'
 
-export default function Home({list = []}: any) {
+export default function Home() {
+  const [style, setStyle] = useState('')
+  console.log(style)
+
+  const styleHandler = () => {
+    setStyle("green")
+  }
 
   return (
     <>
@@ -13,9 +19,8 @@ export default function Home({list = []}: any) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="h-screen flex justify-center items-center">
-        <Upload />
-        <ImagesList list={list} />
+      <main className="">
+        <Main />
       </main>
     </>
   )
